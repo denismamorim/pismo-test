@@ -1,0 +1,26 @@
+How to run the app:
+
+Just install grails from the official site, and run the command
+$ grails run-app
+in the project folder.
+
+Once the application is up, you can access 'http://localhost:8080/view' to get a very simple view to access the public methods of the apis. This means you can list products and make a purchase.
+The are others endpoints avaliable, but they don't have a view to access them and need a direct request. These endpoints are supposed to be accessed only by administrators and therefore require an 'Authorizatin' header with a value of 'admin'. These admin endpoints are:
+
+POST /products -- create a new product based on a json passed in the body as raw data
+Json Example :
+{
+	"name" : "Borracha",
+	"description" : "Borracha branca",
+	"quantity" : 3
+}
+
+PUT /products/$id -- same as post, but updates a product instead of creating a new
+
+DELETE /products/$id -- delete a product in the db
+
+GET /sales -- return all the sales made in the system
+
+By default the system will use an embedded memory database, that is populated with a few tests entry and is deleted once the application is finished.
+
+For any questions, please contact me at denismamorim@gmail.com
